@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
-import { FaLinkedin, FaFileDownload, FaEnvelope, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaFileDownload, FaEnvelope, FaGithub, FaTwitter, FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import './Portfolio.css';
 import type { Engine } from 'tsparticles-engine';
 
@@ -138,6 +138,17 @@ const Navigation = () => {
             Home
           </a>
           <a 
+            href="#about" 
+            className={activeSection === 'about' ? 'active' : ''}
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            About
+          </a>
+          <a 
             href="#projects" 
             className={activeSection === 'projects' ? 'active' : ''}
             onClick={(e) => {
@@ -247,6 +258,96 @@ const HeroSection = () => {
       <div className="scroll-indicator">
         <div className="scroll-line"></div>
         <span>Scroll down</span>
+      </div>
+    </section>
+  );
+};
+
+const AboutSection = () => {
+  const experiences = [
+    {
+      id: 1,
+      title: "Software Developer",
+      company: "Yara International",
+      duration: "Jul 2021 - Present",
+      location: "Bengaluru, Karnataka, India",
+      description: "Developing and maintaining enterprise-level software solutions for agricultural technology. Working with modern web technologies and cloud infrastructure to deliver scalable applications."
+    },
+    {
+      id: 2,
+      title: "Senior Software Engineer",
+      company: "Mindtree · Full-time",
+      duration: "Jun 2019 - Jun 2021",
+      location: "Bengaluru, India",
+      description: "Led frontend development for multiple client projects, implemented CI/CD pipelines, and mentored junior developers. Specialized in React-based applications with complex state management."
+    },
+    {
+      id: 3,
+      title: "Frontend Developer (React)",
+      company: "Startups Club Services Pvt Ltd",
+      duration: "Apr 2018 - May 2019",
+      location: "Bengaluru, India",
+      description: "Built responsive user interfaces for startup products using React.js. Collaborated with designers to implement pixel-perfect UIs and optimized applications for maximum performance."
+    }
+  ];
+
+  return (
+    <section id="about" className="about-section">
+      <div className="container">
+        <h2 className="section-title">
+          <span className="section-number">01.</span>
+          About Me
+        </h2>
+        
+        <div className="about-content">
+          <div className="about-text">
+            <p>
+              Hello! My name is John and I enjoy creating things that live on the internet. 
+              My interest in web development started back in 2015 when I decided to try editing custom 
+              Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+            </p>
+            <p>
+              Fast-forward to today, and I've had the privilege of working at 
+              an <span className="highlight">agricultural corporation</span>, a <span className="highlight">startup</span>, 
+              and a <span className="highlight">large digital services company</span>. My main focus these days is 
+              building accessible, inclusive products and digital experiences at Yara International for a variety of clients.
+            </p>
+            <p>
+              I also recently launched a course that covers everything you need to build a web app with the 
+              React library and a custom backend API.
+            </p>
+          </div>
+          
+          <div className="experience-section">
+            <h3 className="experience-title">Work Experience</h3>
+            
+            <div className="experience-timeline">
+              {experiences.map((exp) => (
+                <div key={exp.id} className="experience-item">
+                  <div className="experience-header">
+                    <div className="experience-title-company">
+                      <h4 className="job-title">{exp.title}</h4>
+                      <p className="company-name">{exp.company}</p>
+                    </div>
+                    
+                    <div className="experience-details">
+                      <div className="detail-item">
+                        <FaCalendarAlt className="detail-icon" />
+                        <span>{exp.duration}</span>
+                      </div>
+                      <div className="detail-item">
+                        <FaMapMarkerAlt className="detail-icon" />
+                        <span>{exp.location}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="job-description">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -425,6 +526,7 @@ function Portfolio() {
       <Navigation />
       <main className="main-content">
         <HeroSection />
+        <AboutSection />
         <Projects />
         <Skills />
         <ContactSection />
