@@ -48,7 +48,7 @@ body {
 }
 
 .nav-logo span {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   background: rgba(100, 255, 218, 0.1);
   width: 50px;
@@ -733,33 +733,264 @@ section {
   }
 }
 
-
-/* About Section */
+/* About Section Styles */
 .about-section {
-  padding: 6rem 0;
-  background: linear-gradient(to bottom, #020e1e 0%, #0a192f 100%);
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%);
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-top: 3rem;
+/* Experience Accordion */
+.experience-accordion {
+  margin-bottom: 60px;
 }
 
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #a8b2d1;
-}
-
-.about-text p {
-  margin-bottom: 1.5rem;
-}
-
-.highlight {
+.title-icon {
   color: #64ffda;
-  font-weight: 500;
+}
+
+.accordion-container {
+  space-y: 20px;
+}
+
+.accordion-item {
+  background: rgba(100, 255, 218, 0.03);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item.active {
+  border-color: #64ffda;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  cursor: pointer;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: rgba(100, 255, 218, 0.05);
+}
+
+.accordion-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #64ffda;
+}
+
+.accordion-arrow {
+  font-size: 1.2rem;
+  color: #64ffda;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-main-info {
+  flex: 1;
+}
+
+.accordion-main-info h4 {
+  font-size: 1.4rem;
+  color: #ccd6f6;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.company {
+  color: #64ffda;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.accordion-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #8892b0;
+}
+
+.accordion-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+.accordion-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 0 25px 25px;
+}
+
+.accordion-description p {
+  color: #8892b0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.achievements h5 {
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.achievements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements li {
+  color: #8892b0;
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.achievements li:before {
+  content: "▹";
+  color: #64ffda;
+  position: absolute;
+  left: 0;
+}
+
+.technologies-used h5 {
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(100, 255, 218, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #64ffda;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.stat-content h4 {
+  font-size: 2rem;
+  color: #64ffda;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.stat-content p {
+  color: #8892b0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .intro-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .accordion-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .accordion-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .accordion-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .gallery-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .quick-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-image {
+    height: 300px;
+  }
 }
 
 /* Experience Section */
