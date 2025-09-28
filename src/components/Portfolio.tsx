@@ -1,4 +1,4 @@
-import { useState, useEffect, type SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import {
@@ -7,9 +7,6 @@ import {
   FaEnvelope,
   FaGithub,
   FaTwitter,
-  FaBriefcase,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
@@ -446,6 +443,20 @@ const AboutSection = () => {
               </div>
             </div>
 
+            <div className="stat-card">
+              <div className="stat-icon">🔧</div>
+              <div className="stat-content">
+                <h4>15+</h4>
+                <p>Technologies</p>
+              </div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-icon">🔧</div>
+              <div className="stat-content">
+                <h4>15+</h4>
+                <p>Technologies</p>
+              </div>
+            </div>
             <div className="stat-card">
               <div className="stat-icon">🔧</div>
               <div className="stat-content">

@@ -737,7 +737,8 @@ section {
 .about-section {
   padding: 100px 0;
   position: relative;
-  background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%);
+  /* background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%); */
+  background: #020e1e;
 }
 
 /* Experience Accordion */
@@ -754,7 +755,7 @@ section {
 }
 
 .accordion-item {
-  background: rgba(100, 255, 218, 0.03);
+  background: #010205;
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: 15px;
   overflow: hidden;
@@ -911,15 +912,15 @@ section {
 /* Quick Stats */
 .quick-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
 }
 
 .stat-card {
-  background: rgba(100, 255, 218, 0.05);
+  background: #010205;
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: 15px;
-  padding: 30px;
+  padding: 15px;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -930,12 +931,11 @@ section {
 }
 
 .stat-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
 }
 
 .stat-content h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #64ffda;
   margin-bottom: 5px;
   font-weight: 700;
@@ -943,7 +943,7 @@ section {
 
 .stat-content p {
   color: #8892b0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 0;
 }
 
