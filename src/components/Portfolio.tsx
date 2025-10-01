@@ -339,7 +339,14 @@ const AboutSection = () => {
       image: "https://images.unsplash.com/photo-1556655848-f3a79cc6d4b3?w=300",
     },
   ];
-
+  const statsData = [
+    { id: 1, icon: "🚀", number: "50+", label: "Projects Completed" },
+    { id: 2, icon: "💼", number: "5+", label: "Years Experience" },
+    { id: 3, icon: "⭐", number: "100%", label: "Client Satisfaction" },
+    { id: 4, icon: "🔧", number: "15+", label: "Technologies" },
+    { id: 5, icon: "🏆", number: "10+", label: "Awards & Certifications" },
+    { id: 6, icon: "🌍", number: "3+", label: "Countries Served" },
+  ];
   const toggleExperience = (id: number) => {
     setActiveExperience(activeExperience === id ? null : id);
   };
@@ -419,51 +426,15 @@ const AboutSection = () => {
 
           {/* Quick Stats */}
           <div className="quick-stats">
-            <div className="stat-card">
-              <div className="stat-icon">🚀</div>
-              <div className="stat-content">
-                <h4>50+</h4>
-                <p>Projects Completed</p>
+            {statsData.map((stat) => (
+              <div key={stat.id} className="stat-card">
+                <div className="stat-icon">{stat.icon}</div>
+                <div className="stat-content">
+                  <h4>{stat.number}</h4>
+                  <p>{stat.label}</p>
+                </div>
               </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon">💼</div>
-              <div className="stat-content">
-                <h4>5+</h4>
-                <p>Years Experience</p>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon">⭐</div>
-              <div className="stat-content">
-                <h4>100%</h4>
-                <p>Client Satisfaction</p>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon">🔧</div>
-              <div className="stat-content">
-                <h4>15+</h4>
-                <p>Technologies</p>
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">🔧</div>
-              <div className="stat-content">
-                <h4>15+</h4>
-                <p>Technologies</p>
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon">🔧</div>
-              <div className="stat-content">
-                <h4>15+</h4>
-                <p>Technologies</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
