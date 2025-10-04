@@ -65,4 +65,4 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v4
       with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
+        github_token: ${{secrets.VA_PORTFOLIO_GITHUB_TOKEN}}
