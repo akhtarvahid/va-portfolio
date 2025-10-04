@@ -1,27 +1,18 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["Build React App"]
     types:
       - completed
-  # Allow manual deployment
-  workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    # Only deploy if the build workflow was successful
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     environment:
@@ -31,8 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: github-pages
+        path: ./dist
+        run-id: ${{ github.event.workflow_run.id }}
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload to Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
+        
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-      with:
-        github_token: ${{ secrets.VA_PORTFOLIO_GITHUB_TOKEN }}
