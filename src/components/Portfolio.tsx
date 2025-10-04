@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaGithub,
   FaTwitter,
+  FaStackOverflow,
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
@@ -25,6 +26,13 @@ import DockerLogo from "../assets/skills/docker.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 import FigmaLogo from "../assets/skills/figma.svg";
 import JestLogo from "../assets/skills/jest.svg";
+import MindtreeLogo1 from '../assets/mindtree1.png';
+import MindtreeLogo2 from '../assets/mindtree2.png';
+import SCLogo from '../assets/startupsclub.jpg';
+import SCLogoHero from '../assets/startupsclub-hero.webp';
+import YaraLogo from '../assets/yara1.png';
+import YaraLogo2 from '../assets/yara2.jpg';
+
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -303,7 +311,7 @@ const AboutSection = () => {
         "Mentored 3 junior developers in best practices",
       ],
       technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300",
+      image: YaraLogo,
     },
     {
       id: 2,
@@ -320,7 +328,7 @@ const AboutSection = () => {
       ],
       technologies: ["React", "TypeScript", "Jenkins", "Redux", "MongoDB"],
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300",
+        MindtreeLogo2,
     },
     {
       id: 3,
@@ -336,7 +344,7 @@ const AboutSection = () => {
         "Collaborated with cross-functional agile teams",
       ],
       technologies: ["React", "JavaScript", "CSS3", "REST APIs", "Git"],
-      image: "https://images.unsplash.com/photo-1556655848-f3a79cc6d4b3?w=300",
+      image: SCLogo,
     },
   ];
   const statsData = [
@@ -617,9 +625,9 @@ const ContactSection = () => {
         </h2>
         <div className="contact-content">
           <p className="contact-description">
-            I'm currently looking for new opportunities. Whether you have a
-            question or just want to say hi, I'll try my best to get back to
-            you!
+            I'm currently looking for new opportunities and interesting
+            projects. Whether you have a question, want to collaborate, or just
+            want to say hello, I'll do my best to get back to you!
           </p>
           <a href="mailto:john.doe@example.com" className="contact-button">
             <FaEnvelope className="btn-icon" />
@@ -635,8 +643,24 @@ const ContactSection = () => {
             <a href="#" className="social-link">
               <FaTwitter />
             </a>
+            <a
+              href="https://stackoverflow.com"
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Stack Overflow"
+            >
+              <FaStackOverflow />
+            </a>
           </div>
         </div>
+        {/* Copyright Footer */}
+        {/* Copyright Footer - Outside container for full width */}
+      <div className="copyright-footer">
+        <div className="container">
+          <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+        </div>
+      </div>
       </div>
     </section>
   );
