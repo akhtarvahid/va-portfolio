@@ -26,12 +26,9 @@ import DockerLogo from "../assets/skills/docker.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 import FigmaLogo from "../assets/skills/figma.svg";
 import JestLogo from "../assets/skills/jest.svg";
-import MindtreeLogo1 from '../assets/mindtree1.png';
 import MindtreeLogo2 from '../assets/mindtree2.png';
 import SCLogo from '../assets/startupsclub.jpg';
-import SCLogoHero from '../assets/startupsclub-hero.webp';
 import YaraLogo from '../assets/yara1.png';
-import YaraLogo2 from '../assets/yara2.jpg';
 
 
 const profileImage =
