@@ -11,6 +11,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,6 +46,7 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
+        # Name is not needed for pages artifacts - they're handled differently
 
   deploy:
     environment:
@@ -55,16 +60,15 @@ jobs:
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     
     steps:
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
     - name: Download build artifacts
       uses: actions/download-artifact@v4
       with:
         name: github-pages
         path: ./dist
-        run-id: ${{ github.event.workflow_run.id }}
         
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      
     - name: Upload to Pages
       uses: actions/upload-pages-artifact@v3
       with:
