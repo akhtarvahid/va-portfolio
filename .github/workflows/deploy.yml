@@ -27,6 +27,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
+      
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -36,17 +37,13 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    # - name: Run tests (if any)
-    #   run: npm test -- --coverage --watchAll=false
-      
     - name: Build project
       run: npm run build
       
-    - name: Upload artifact
+    - name: Upload pages artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
-        # Name is not needed for pages artifacts - they're handled differently
 
   deploy:
     environment:
@@ -56,24 +53,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     
+    
     # Only deploy on push to main branch (not on PRs)
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     
     steps:
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: github-pages
-        path: ./dist
-        
-    - name: Upload to Pages
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./dist
-        
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
