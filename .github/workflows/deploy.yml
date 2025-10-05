@@ -22,26 +22,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Delete old pages artifacts
-      uses: actions/github-script@v7
+    - name: Cleanup old artifacts
+      uses: c-hive/gha-remove-artifacts@v1
       with:
-       script: |
-        const { data: artifacts } = await github.rest.actions.listArtifactsForRepo({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            name: 'github-pages',
-        });
-        
-        for (const artifact of artifacts.artifacts) {
-          if (artifact.name === 'github-pages') {
-             await github.rest.actions.deleteArtifact({
-             owner: context.repo.owner,
-             repo: context.repo.repo,
-             artifact_id: artifact.id,
-            });
-            console.log(`Deleted artifact: ${artifact.name} (ID: ${artifact.id})`);
-          }
-        }  
+        age: '0 hours'  # Remove all artifacts older than 0 hours (all)
+        # OR be more specific:
+        # names: 'github-pages'
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
