@@ -21,13 +21,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
-    - name: Cleanup old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-        age: '0 hours'  # Remove all artifacts older than 0 hours (all)
-        # OR be more specific:
-        # names: 'github-pages'
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
