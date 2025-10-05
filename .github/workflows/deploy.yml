@@ -44,7 +44,7 @@ jobs:
 
   deploy:
     environment:
-      name: github-pages
+      name: github-pages-artifact
       url: ${{ steps.deployment.outputs.page_url }}
     
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
     - name: Download build artifacts
       uses: actions/download-artifact@v4
       with:
-        name: github-pages
+        name: github-pages-artifact
         path: ./dist
         run-id: ${{ github.event.workflow_run.id }}
         
