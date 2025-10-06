@@ -26,10 +26,9 @@ import DockerLogo from "../assets/skills/docker.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 import FigmaLogo from "../assets/skills/figma.svg";
 import JestLogo from "../assets/skills/jest.svg";
-import MindtreeLogo2 from '../assets/mindtree2.png';
-import SCLogo from '../assets/startupsclub.jpg';
-import YaraLogo from '../assets/yara1.png';
-
+import MindtreeLogo2 from "../assets/mindtree2.png";
+import SCLogo from "../assets/startupsclub.jpg";
+import YaraLogo from "../assets/yara1.png";
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -292,10 +291,10 @@ const HeroSection = () => {
 };
 
 const AboutSection = () => {
-  const [activeExperience, setActiveExperience] = useState<null | number>(1);
+  const [activeExperience, setActiveExperience] = useState<null | string>("I");
   const experiences = [
     {
-      id: 1,
+      id: "I",
       title: "Software Developer",
       company: "Yara International",
       duration: "Jul 2021 - Present",
@@ -311,7 +310,7 @@ const AboutSection = () => {
       image: YaraLogo,
     },
     {
-      id: 2,
+      id: "II",
       title: "Senior Software Engineer",
       company: "Mindtree · Full-time",
       duration: "Jun 2019 - Jun 2021",
@@ -324,11 +323,10 @@ const AboutSection = () => {
         "Implemented design system used across 10+ projects",
       ],
       technologies: ["React", "TypeScript", "Jenkins", "Redux", "MongoDB"],
-      image:
-        MindtreeLogo2,
+      image: MindtreeLogo2,
     },
     {
-      id: 3,
+      id: "III",
       title: "Frontend Developer",
       company: "Startups Club Services",
       duration: "Apr 2018 - May 2019",
@@ -352,7 +350,7 @@ const AboutSection = () => {
     { id: 5, icon: "🏆", number: "10+", label: "Awards & Certifications" },
     { id: 6, icon: "🌍", number: "3+", label: "Countries Served" },
   ];
-  const toggleExperience = (id: number) => {
+  const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
   };
 
@@ -368,7 +366,7 @@ const AboutSection = () => {
           {/* Experience Accordion */}
           <div className="experience-accordion">
             <div className="accordion-container">
-              {experiences.map((exp, index) => (
+              {experiences.map((exp) => (
                 <div
                   key={exp.id}
                   className={`accordion-item ${
@@ -380,7 +378,7 @@ const AboutSection = () => {
                     onClick={() => toggleExperience(exp.id)}
                   >
                     <div className="accordion-indicator">
-                      <span className="accordion-number">0{index + 1}</span>
+                      <span className="accordion-number">{exp.id}</span>
                       <div className="accordion-arrow">›</div>
                     </div>
 
@@ -401,7 +399,6 @@ const AboutSection = () => {
                   <div className="accordion-content">
                     <div className="accordion-grid">
                       <div className="accordion-description">
-                        <p>{exp.description}</p>
                         <div className="achievements">
                           <h5>Key Achievements</h5>
                           <ul>
@@ -653,11 +650,11 @@ const ContactSection = () => {
         </div>
         {/* Copyright Footer */}
         {/* Copyright Footer - Outside container for full width */}
-      <div className="copyright-footer">
-        <div className="container">
-          <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+        <div className="copyright-footer">
+          <div className="container">
+            <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

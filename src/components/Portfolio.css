@@ -181,14 +181,14 @@ body {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   margin-bottom: 1.5rem;
   color: #8892b0;
   font-weight: 600;
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #8892b0;
   max-width: 540px;
@@ -1088,7 +1088,7 @@ section {
 }
 
 .contact-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #8892b0;
   margin-bottom: 3rem;
   max-width: 600px;
