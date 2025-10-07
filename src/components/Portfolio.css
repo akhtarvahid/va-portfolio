@@ -6,7 +6,8 @@
 }
 
 body {
-  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
   color: #ccd6f6;
   overflow-x: hidden;
   line-height: 1.6;
@@ -48,7 +49,7 @@ body {
 }
 
 .nav-logo span {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   background: rgba(100, 255, 218, 0.1);
   width: 50px;
@@ -85,7 +86,7 @@ body {
 }
 
 .nav-links a.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -97,7 +98,7 @@ body {
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -183,7 +184,7 @@ body {
 .hero-subtitle {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   margin-bottom: 1.5rem;
-  color: #8892b0;
+  color: #ffffe2;
   font-weight: 600;
 }
 
@@ -353,7 +354,7 @@ section {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: relative;
   flex-grow: 1;
   height: 1px;
@@ -363,7 +364,7 @@ section {
 
 .section-number {
   color: #64ffda;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   font-size: 1.5rem;
   margin-right: 0.5rem;
 }
@@ -374,9 +375,10 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  min-width: min-content;
 }
 
+/* Project Cards */
 .project-card {
   background-color: #010205;
   border-radius: 10px;
@@ -386,16 +388,25 @@ section {
   border: 1px solid rgba(100, 255, 218, 0.1);
   position: relative;
   overflow: hidden;
+  min-width: 330px;
+  width: 330px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.05), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(100, 255, 218, 0.05),
+    transparent
+  );
   transform: translateX(-100%);
   transition: transform 0.6s;
 }
@@ -435,7 +446,7 @@ section {
   padding: 0.3rem 0.7rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 .project-links {
@@ -455,7 +466,7 @@ section {
 }
 
 .project-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -496,23 +507,26 @@ section {
 }
 
 .skill-item {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+.Styled-components {
+  background-color: #eda5d7;
 }
 
 .skill-name {
   display: block;
   margin-bottom: 0.5rem;
   color: #ccd6f6;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   font-size: 0.9rem;
 }
 
 .skill-bar {
-  height: 6px;
+  height:4px;
   background-color: rgba(136, 146, 176, 0.2);
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 0.3rem;
+  /* margin-bottom: 0.3rem; */
 }
 
 .skill-progress {
@@ -524,7 +538,7 @@ section {
 }
 
 .skill-progress::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -559,7 +573,7 @@ section {
   font-size: 0.8rem;
   color: #8892b0;
   float: right;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 .social-links {
@@ -596,20 +610,20 @@ section {
     text-align: center;
     gap: 3rem;
   }
-  
+
   .hero-text {
     order: 2;
     padding-top: 0;
   }
-  
+
   .hero-visual {
     order: 1;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .profile-image-container {
     width: 250px;
     height: 250px;
@@ -620,7 +634,7 @@ section {
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .nav-links {
     position: fixed;
     top: 70px;
@@ -634,46 +648,46 @@ section {
     padding: 2rem 0;
     gap: 0;
   }
-  
+
   .nav-links a {
     padding: 1rem;
     display: block;
   }
-  
+
   .nav-links.nav-open {
     right: 0;
   }
-  
+
   .hero-title {
     font-size: 2.8rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.8rem;
   }
-  
+
   .profile-image {
     width: 200px;
     height: 200px;
   }
-  
+
   .projects-grid,
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .nav-container {
     flex-direction: row;
   }
-  
+
   .social-links {
     flex-wrap: wrap;
   }
-  
+
   .btn {
     padding: 0.8rem 1.5rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -684,12 +698,12 @@ section {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     justify-content: center;
   }
-  
+
   .profile-image-container {
     width: 200px;
     height: 200px;
@@ -782,8 +796,9 @@ section {
   margin-bottom: 5px;
   font-size: 1rem;
 }
-.location, .duration {
-  font-size: .9rem;
+.location,
+.duration {
+  font-size: 0.9rem;
 }
 .accordion-meta {
   display: flex;
@@ -844,7 +859,7 @@ section {
   padding: 3px 0;
   position: relative;
   padding-left: 20px;
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .achievements li:before {
@@ -919,12 +934,12 @@ section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .accordion-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .quick-stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -934,26 +949,26 @@ section {
   .about-section {
     padding: 60px 0;
   }
-  
+
   .accordion-header {
     flex-direction: column;
     text-align: center;
     gap: 15px;
   }
-  
+
   .accordion-meta {
     flex-direction: column;
     gap: 5px;
   }
-  
+
   .gallery-thumbnails {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .quick-stats {
     grid-template-columns: 1fr;
   }
-  
+
   .main-image {
     height: 300px;
   }
@@ -988,7 +1003,7 @@ section {
 }
 
 .experience-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -998,7 +1013,7 @@ section {
 }
 
 .experience-item::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -4px;
   top: 0;
@@ -1071,11 +1086,11 @@ section {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .experience-details {
     align-items: flex-start;
   }
-  
+
   .detail-item {
     font-size: 0.85rem;
   }
@@ -1139,7 +1154,7 @@ section {
     margin-top: 40px;
     padding-top: 20px;
   }
-  
+
   .copyright-footer p {
     font-size: 0.8rem;
   }

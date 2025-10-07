@@ -16,9 +16,9 @@ import ReactLogo from "../assets/skills/react.svg";
 import HTMLLogo from "../assets/skills/html.svg";
 import CSSLogo from "../assets/skills/css.svg";
 import TypeScriptLogo from "../assets/skills/typescript.svg";
+import NestjsLogo from "../assets/skills/nestjs-svgrepo-com.svg";
 import NodejsLogo from "../assets/skills/node.js.svg";
 import PythonLogo from "../assets/skills/python.svg";
-import ExpressLogo from "../assets/skills/express.svg";
 import PostgresLogo from "../assets/skills/postgresql.svg";
 import MongoLogo from "../assets/skills/mongodb.svg";
 import GitLogo from "../assets/skills/git.svg";
@@ -29,6 +29,7 @@ import JestLogo from "../assets/skills/jest.svg";
 import MindtreeLogo2 from "../assets/mindtree2.png";
 import SCLogo from "../assets/startupsclub.jpg";
 import YaraLogo from "../assets/yara1.png";
+import StyledComponentLogo from "../assets/skills/styled-components.svg";
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -533,15 +534,15 @@ const Skills = () => {
         { name: "JavaScript", level: 85, logoUrl: JSLogo },
         { name: "HTML/CSS", level: 95, logoUrl: HTMLLogo },
         { name: "TypeScript", level: 80, logoUrl: TypeScriptLogo },
-        { name: "Vue.js", level: 75 },
+        { name: "Styled-components", level: 75, logoUrl: StyledComponentLogo },
       ],
     },
     {
       category: "Backend",
       skills: [
+        { name: "Nestjs", level: 85, logoUrl: NestjsLogo },
         { name: "Node.js", level: 85, logoUrl: NodejsLogo },
         { name: "Python", level: 80, logoUrl: PythonLogo },
-        { name: "Express", level: 85, logoUrl: ExpressLogo },
         { name: "MongoDB", level: 75, logoUrl: MongoLogo },
         { name: "PostgreSQL", level: 70, logoUrl: PostgresLogo },
       ],
@@ -552,8 +553,8 @@ const Skills = () => {
         { name: "Git", level: 90, logoUrl: GitLogo },
         { name: "Docker", level: 70, logoUrl: DockerLogo },
         { name: "AWS", level: 65, logoUrl: AWSLogo },
-        { name: "Figma", level: 80, logoUrl: FigmaLogo },
         { name: "Jest", level: 75, logoUrl: JestLogo },
+        { name: "Figma", level: 80, logoUrl: FigmaLogo },
       ],
     },
   ];
@@ -576,9 +577,12 @@ const Skills = () => {
                       {skill.logoUrl && (
                         <>
                           <img
-                            style={{ height: 18 }}
+                            style={{
+                              height: 18,
+                            }}
                             src={skill.logoUrl}
                             alt="logo"
+                            className={skill.name}
                           />
                           {skill.name === "HTML/CSS" && (
                             <img
