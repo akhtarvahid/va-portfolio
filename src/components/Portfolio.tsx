@@ -16,9 +16,9 @@ import ReactLogo from "../assets/skills/react.svg";
 import HTMLLogo from "../assets/skills/html.svg";
 import CSSLogo from "../assets/skills/css.svg";
 import TypeScriptLogo from "../assets/skills/typescript.svg";
+import NestjsLogo from "../assets/skills/nestjs-svgrepo-com.svg";
 import NodejsLogo from "../assets/skills/node.js.svg";
 import PythonLogo from "../assets/skills/python.svg";
-import ExpressLogo from "../assets/skills/express.svg";
 import PostgresLogo from "../assets/skills/postgresql.svg";
 import MongoLogo from "../assets/skills/mongodb.svg";
 import GitLogo from "../assets/skills/git.svg";
@@ -26,10 +26,10 @@ import DockerLogo from "../assets/skills/docker.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 import FigmaLogo from "../assets/skills/figma.svg";
 import JestLogo from "../assets/skills/jest.svg";
-import MindtreeLogo2 from '../assets/mindtree2.png';
-import SCLogo from '../assets/startupsclub.jpg';
-import YaraLogo from '../assets/yara1.png';
-
+import MindtreeLogo2 from "../assets/mindtree2.png";
+import SCLogo from "../assets/startupsclub.jpg";
+import YaraLogo from "../assets/yara1.png";
+import StyledComponentLogo from "../assets/skills/styled-components.svg";
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -292,10 +292,10 @@ const HeroSection = () => {
 };
 
 const AboutSection = () => {
-  const [activeExperience, setActiveExperience] = useState<null | number>(1);
+  const [activeExperience, setActiveExperience] = useState<null | string>("I");
   const experiences = [
     {
-      id: 1,
+      id: "I",
       title: "Software Developer",
       company: "Yara International",
       duration: "Jul 2021 - Present",
@@ -311,7 +311,7 @@ const AboutSection = () => {
       image: YaraLogo,
     },
     {
-      id: 2,
+      id: "II",
       title: "Senior Software Engineer",
       company: "Mindtree · Full-time",
       duration: "Jun 2019 - Jun 2021",
@@ -324,11 +324,10 @@ const AboutSection = () => {
         "Implemented design system used across 10+ projects",
       ],
       technologies: ["React", "TypeScript", "Jenkins", "Redux", "MongoDB"],
-      image:
-        MindtreeLogo2,
+      image: MindtreeLogo2,
     },
     {
-      id: 3,
+      id: "III",
       title: "Frontend Developer",
       company: "Startups Club Services",
       duration: "Apr 2018 - May 2019",
@@ -352,7 +351,7 @@ const AboutSection = () => {
     { id: 5, icon: "🏆", number: "10+", label: "Awards & Certifications" },
     { id: 6, icon: "🌍", number: "3+", label: "Countries Served" },
   ];
-  const toggleExperience = (id: number) => {
+  const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
   };
 
@@ -368,7 +367,7 @@ const AboutSection = () => {
           {/* Experience Accordion */}
           <div className="experience-accordion">
             <div className="accordion-container">
-              {experiences.map((exp, index) => (
+              {experiences.map((exp) => (
                 <div
                   key={exp.id}
                   className={`accordion-item ${
@@ -380,7 +379,7 @@ const AboutSection = () => {
                     onClick={() => toggleExperience(exp.id)}
                   >
                     <div className="accordion-indicator">
-                      <span className="accordion-number">0{index + 1}</span>
+                      <span className="accordion-number">{exp.id}</span>
                       <div className="accordion-arrow">›</div>
                     </div>
 
@@ -401,7 +400,6 @@ const AboutSection = () => {
                   <div className="accordion-content">
                     <div className="accordion-grid">
                       <div className="accordion-description">
-                        <p>{exp.description}</p>
                         <div className="achievements">
                           <h5>Key Achievements</h5>
                           <ul>
@@ -536,15 +534,15 @@ const Skills = () => {
         { name: "JavaScript", level: 85, logoUrl: JSLogo },
         { name: "HTML/CSS", level: 95, logoUrl: HTMLLogo },
         { name: "TypeScript", level: 80, logoUrl: TypeScriptLogo },
-        { name: "Vue.js", level: 75 },
+        { name: "Styled-components", level: 75, logoUrl: StyledComponentLogo },
       ],
     },
     {
       category: "Backend",
       skills: [
+        { name: "Nestjs", level: 85, logoUrl: NestjsLogo },
         { name: "Node.js", level: 85, logoUrl: NodejsLogo },
         { name: "Python", level: 80, logoUrl: PythonLogo },
-        { name: "Express", level: 85, logoUrl: ExpressLogo },
         { name: "MongoDB", level: 75, logoUrl: MongoLogo },
         { name: "PostgreSQL", level: 70, logoUrl: PostgresLogo },
       ],
@@ -555,8 +553,8 @@ const Skills = () => {
         { name: "Git", level: 90, logoUrl: GitLogo },
         { name: "Docker", level: 70, logoUrl: DockerLogo },
         { name: "AWS", level: 65, logoUrl: AWSLogo },
-        { name: "Figma", level: 80, logoUrl: FigmaLogo },
         { name: "Jest", level: 75, logoUrl: JestLogo },
+        { name: "Figma", level: 80, logoUrl: FigmaLogo },
       ],
     },
   ];
@@ -579,9 +577,12 @@ const Skills = () => {
                       {skill.logoUrl && (
                         <>
                           <img
-                            style={{ height: 18 }}
+                            style={{
+                              height: 18,
+                            }}
                             src={skill.logoUrl}
                             alt="logo"
+                            className={skill.name}
                           />
                           {skill.name === "HTML/CSS" && (
                             <img
@@ -653,11 +654,11 @@ const ContactSection = () => {
         </div>
         {/* Copyright Footer */}
         {/* Copyright Footer - Outside container for full width */}
-      <div className="copyright-footer">
-        <div className="container">
-          <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+        <div className="copyright-footer">
+          <div className="container">
+            <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );
