@@ -8,6 +8,7 @@ import {
   FaGithub,
   FaTwitter,
   FaStackOverflow,
+  FaAws,
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
@@ -452,21 +453,21 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Medium-ms",
       description:
-        "A full-stack e-commerce solution with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com",
+        "A full-stack blogging app with React, Nest.js, and PostgreSQL",
+      technologies: ["React", "Nestjs.js", "PostgreSQL", "TypeORM"],
+      github: "https://github.com/akhtarvahid/medium-ms",
       demo: "https://demo.com",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Topics note App",
       description:
-        "A collaborative task management application with real-time updates",
-      technologies: ["React", "Firebase", "Material-UI", "Redux"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+        "A collaborative topics management application",
+      technologies: ["React", "github-page", "React-bootstrap", "SWR"],
+      github: "https://github.com/akhtarvahid/topics-note?tab=readme-ov-file",
+      demo: "https://akhtarvahid.github.io/topics-note/",
     },
     {
       id: 3,
@@ -515,8 +516,17 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaLinkedin />
+                    <FaAws />
                     Live Demo
+                  </a>
+                  <a
+                    href={project.demo}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaStackOverflow />
+                    View More
                   </a>
                 </div>
               </div>

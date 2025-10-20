@@ -374,25 +374,23 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
-  min-width: min-content;
+  width: 100%;
 }
 
-/* Project Cards */
 .project-card {
   background-color: #010205;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(100, 255, 218, 0.1);
   position: relative;
   overflow: hidden;
-  min-width: 330px;
-  width: 330px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .project-card::before {
@@ -502,7 +500,7 @@ section {
 
 .category-title {
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
   color: #e6f1ff;
   text-align: center;
 }
