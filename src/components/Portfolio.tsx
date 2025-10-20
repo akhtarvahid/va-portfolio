@@ -11,25 +11,28 @@ import {
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
-import JSLogo from "../assets/skills/javascript.svg";
-import ReactLogo from "../assets/skills/react.svg";
-import HTMLLogo from "../assets/skills/html.svg";
-import CSSLogo from "../assets/skills/css.svg";
-import TypeScriptLogo from "../assets/skills/typescript.svg";
-import NestjsLogo from "../assets/skills/nestjs-svgrepo-com.svg";
-import NodejsLogo from "../assets/skills/node.js.svg";
-import PythonLogo from "../assets/skills/python.svg";
-import PostgresLogo from "../assets/skills/postgresql.svg";
-import MongoLogo from "../assets/skills/mongodb.svg";
-import GitLogo from "../assets/skills/git.svg";
-import DockerLogo from "../assets/skills/docker.svg";
-import AWSLogo from "../assets/skills/aws.svg";
-import FigmaLogo from "../assets/skills/figma.svg";
-import JestLogo from "../assets/skills/jest.svg";
-import MindtreeLogo2 from "../assets/mindtree2.png";
-import SCLogo from "../assets/startupsclub.jpg";
-import YaraLogo from "../assets/yara1.png";
-import StyledComponentLogo from "../assets/skills/styled-components.svg";
+
+import {
+  JSLogo,
+  ReactLogo,
+  HTMLLogo,
+  CSSLogo,
+  TypeScriptLogo,
+  NestjsLogo,
+  NodejsLogo,
+  PythonLogo,
+  PostgresLogo,
+  MongoLogo,
+  GitLogo,
+  DockerLogo,
+  AWSLogo,
+  FigmaLogo,
+  JestLogo,
+  MindtreeLogo2,
+  SCLogo,
+  YaraLogo,
+  StyledComponentLogo,
+} from "../assets";
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -632,13 +635,25 @@ const ContactSection = () => {
             Say Hello
           </a>
           <div className="social-links">
-            <a href="#" className="social-link">
+            <a
+              href="https://www.github.com/akhtarvahid/"
+              target="_blank"
+              className="social-link"
+            >
               <FaGithub />
             </a>
-            <a href="#" className="social-link">
+            <a
+              href="https://www.linkedin.com/in/akhtarvahid/"
+              target="_blank"
+              className="social-link"
+            >
               <FaLinkedin />
             </a>
-            <a href="#" className="social-link">
+            <a
+              href="https://x.com/vahidakhtar4"
+              target="_blank"
+              className="social-link"
+            >
               <FaTwitter />
             </a>
             <a
@@ -653,7 +668,6 @@ const ContactSection = () => {
           </div>
         </div>
         {/* Copyright Footer */}
-        {/* Copyright Footer - Outside container for full width */}
         <div className="copyright-footer">
           <div className="container">
             <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
