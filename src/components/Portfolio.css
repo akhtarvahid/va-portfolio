@@ -139,6 +139,12 @@ body {
   z-index: 1;
 }
 
+@media (max-width: 768px) { 
+  .main-content {
+   margin-top: 105px;
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -704,7 +710,7 @@ section {
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -1094,7 +1100,7 @@ section {
   }
 
   .quick-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 
