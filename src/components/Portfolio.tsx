@@ -8,10 +8,10 @@ import {
   FaGithub,
   FaTwitter,
   FaStackOverflow,
+  FaAws,
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
-
 import {
   JSLogo,
   ReactLogo,
@@ -32,6 +32,7 @@ import {
   SCLogo,
   YaraLogo,
   StyledComponentLogo,
+  StackApps,
 } from "../assets";
 
 const profileImage =
@@ -65,7 +66,7 @@ const ParticleBackground = () => {
             bubble: {
               distance: 400,
               duration: 2,
-              size: 25, // Increased bubble size on hover
+              size: 10, // Increased bubble size on hover
               opacity: 0.5, // Full opacity
               speed: 3,
             },
@@ -253,7 +254,9 @@ const HeroSection = () => {
     <section id="home" className="hero-section">
       <div className="hero-content">
         <div className="hero-text">
-          <p className="hero-greeting">Hello 👋, my name is</p>
+          <p className="hero-greeting">
+            Hello <span className="waving-hand">👋</span>, my name is
+          </p>
           <h1 className="hero-title">John Doe</h1>
           <h2 className="hero-subtitle">I build things for the web.</h2>
           <p className="hero-description">
@@ -306,9 +309,9 @@ const AboutSection = () => {
       description:
         "Developing enterprise-level software solutions for agricultural technology.",
       achievements: [
-        "Led migration of legacy systems to microservices architecture",
-        "Improved application performance by 40% through optimization",
-        "Mentored 3 junior developers in best practices",
+        "Led the migration of a web application, improving performance and enhancing the user experience.",
+        "Built a farmer-facing web app that automated growth stage calendars, boosting crop yields by 20%.",
+        "Created reusable Storybook UI components, streamlining the development process and maintaining design consistency.",
       ],
       technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
       image: YaraLogo,
@@ -322,9 +325,9 @@ const AboutSection = () => {
       description:
         "Led frontend development for multiple client projects and implemented CI/CD pipelines.",
       achievements: [
-        "Reduced deployment time by 60% with automated pipelines",
-        "Architected scalable React applications for 50k+ users",
-        "Implemented design system used across 10+ projects",
+        "Built reusable UI components that are used across the project.",
+        "Architected scalable React typescript applications for 100k+ users.",
+        "Developed search module with autosuggestion and recent searches is being used across 45+ countries by 100k+ users.",
       ],
       technologies: ["React", "TypeScript", "Jenkins", "Redux", "MongoDB"],
       image: MindtreeLogo2,
@@ -338,21 +341,21 @@ const AboutSection = () => {
       description:
         "Built responsive user interfaces for startup products using React.js.",
       achievements: [
-        "Delivered 15+ production-ready applications",
-        "Improved page load times by 35% on average",
-        "Collaborated with cross-functional agile teams",
+        "Engineered React migration from jQuery, boosting performance 50% and productivity 65%.",
+        "Designed routing architecture for 50+ enterprise pages with conditional layouts and auth.",
+        "Developed social platform with real-time interactions and nested comments for 10K+ users.",
       ],
       technologies: ["React", "JavaScript", "CSS3", "REST APIs", "Git"],
       image: SCLogo,
     },
   ];
   const statsData = [
-    { id: 1, icon: "🚀", number: "50+", label: "Projects Completed" },
-    { id: 2, icon: "💼", number: "5+", label: "Years Experience" },
+    { id: 1, icon: "🚀", number: "10+", label: "Projects Completed" },
+    { id: 2, icon: "💼", number: "7+", label: "Years Experience" },
     { id: 3, icon: "⭐", number: "100%", label: "Client Satisfaction" },
     { id: 4, icon: "🔧", number: "15+", label: "Technologies" },
     { id: 5, icon: "🏆", number: "10+", label: "Awards & Certifications" },
-    { id: 6, icon: "🌍", number: "3+", label: "Countries Served" },
+    { id: 6, icon: "🌍", number: "5+", label: "Countries Served" },
   ];
   const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
@@ -452,21 +455,20 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Medium-ms",
       description:
-        "A full-stack e-commerce solution with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com",
+        "A full-stack blogging app with React, Nest.js, and PostgreSQL",
+      technologies: ["React", "Nestjs.js", "PostgreSQL", "TypeORM"],
+      github: "https://github.com/akhtarvahid/medium-ms",
       demo: "https://demo.com",
     },
     {
       id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates",
-      technologies: ["React", "Firebase", "Material-UI", "Redux"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      title: "Topics note App",
+      description: "A collaborative topics management application",
+      technologies: ["React", "github-page", "React-bootstrap", "SWR"],
+      github: "https://github.com/akhtarvahid/topics-note?tab=readme-ov-file",
+      demo: "https://akhtarvahid.github.io/topics-note/",
     },
     {
       id: 3,
@@ -494,7 +496,7 @@ const Projects = () => {
                 <p className="project-description">{project.description}</p>
                 <div className="technologies">
                   {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">
+                    <span key={index} className="proj-tech-tags">
                       {tech}
                     </span>
                   ))}
@@ -515,8 +517,17 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaLinkedin />
+                    <FaAws />
                     Live Demo
+                  </a>
+                  <a
+                    href={project.demo}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img style={{ height: 20 }} src={StackApps} alt="stack" />
+                    View More
                   </a>
                 </div>
               </div>
