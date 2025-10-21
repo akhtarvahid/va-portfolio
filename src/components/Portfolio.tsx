@@ -254,7 +254,9 @@ const HeroSection = () => {
     <section id="home" className="hero-section">
       <div className="hero-content">
         <div className="hero-text">
-          <p className="hero-greeting">Hello 👋, my name is</p>
+          <p className="hero-greeting">
+            Hello <span className="waving-hand">👋</span>, my name is
+          </p>
           <h1 className="hero-title">John Doe</h1>
           <h2 className="hero-subtitle">I build things for the web.</h2>
           <p className="hero-description">
