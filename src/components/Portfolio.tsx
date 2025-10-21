@@ -494,7 +494,7 @@ const Projects = () => {
                 <p className="project-description">{project.description}</p>
                 <div className="technologies">
                   {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">
+                    <span key={index} className="proj-tech-tags">
                       {tech}
                     </span>
                   ))}
