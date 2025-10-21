@@ -12,7 +12,6 @@ import {
 } from "react-icons/fa";
 import "./Portfolio.css";
 import type { Engine } from "tsparticles-engine";
-
 import {
   JSLogo,
   ReactLogo,
@@ -33,6 +32,7 @@ import {
   SCLogo,
   YaraLogo,
   StyledComponentLogo,
+  StackApps,
 } from "../assets";
 
 const profileImage =
@@ -463,8 +463,7 @@ const Projects = () => {
     {
       id: 2,
       title: "Topics note App",
-      description:
-        "A collaborative topics management application",
+      description: "A collaborative topics management application",
       technologies: ["React", "github-page", "React-bootstrap", "SWR"],
       github: "https://github.com/akhtarvahid/topics-note?tab=readme-ov-file",
       demo: "https://akhtarvahid.github.io/topics-note/",
@@ -525,7 +524,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaStackOverflow />
+                    <img style={{ height: 20 }} src={StackApps} alt="stack" />
                     View More
                   </a>
                 </div>

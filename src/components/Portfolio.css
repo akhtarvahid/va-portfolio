@@ -187,7 +187,27 @@ body {
   margin-bottom: 1.5rem;
   color: #ffffe2;
   font-weight: 600;
+    background: linear-gradient(
+    45deg,
+    #64ffda 0%,
+    #ccd6f6 50%,
+    #64ffda 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3s ease-in-out infinite;
 }
+
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+
+
 
 .hero-description {
   font-size: 1rem;
@@ -711,23 +731,19 @@ section {
 
 /* About Section Styles */
 .about-section {
-  padding: 100px 0;
-  position: relative;
-  /* background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%); */
+  padding: 80px 0;
   background: #020e1e;
 }
 
 /* Experience Accordion */
 .experience-accordion {
-  margin-bottom: 60px;
-}
-
-.title-icon {
-  color: #64ffda;
+  margin-bottom: 40px;
 }
 
 .accordion-container {
-  space-y: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .accordion-item {
@@ -761,6 +777,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .accordion-number {
@@ -781,13 +798,14 @@ section {
 
 .accordion-main-info {
   flex: 1;
+  min-width: 0; /* Prevent overflow */
 }
 
 .accordion-main-info h4 {
   font-size: 1.2rem;
   color: #ccd6f6;
-  /* margin-bottom: 5px; */
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .company {
@@ -795,22 +813,21 @@ section {
   margin-bottom: 5px;
   font-size: 1rem;
 }
-.location,
-.duration {
-  font-size: 0.9rem;
-}
+
 .accordion-meta {
   display: flex;
   gap: 20px;
   font-size: 0.9rem;
   color: #8892b0;
+  flex-wrap: wrap;
 }
 
 .accordion-image {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .accordion-image img {
@@ -826,7 +843,7 @@ section {
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 500px;
+  max-height: 1000px; /* Allow more height for content */
 }
 
 .accordion-grid {
@@ -855,10 +872,11 @@ section {
 
 .achievements li {
   color: #8892b0;
-  padding: 3px 0;
+  padding: 5px 0;
   position: relative;
   padding-left: 20px;
   font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .achievements li:before {
@@ -893,29 +911,27 @@ section {
 .quick-stats {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 15px;
 }
 
 .stat-card {
   background: #010205;
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: 15px;
-  padding: 15px;
+  padding: 20px 15px;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
-  border-color: #64ffda;
-
-  background-color: rgba(204, 214, 246, 0.1);
   transform: translateY(-3px);
+  border-color: #64ffda;
   box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
 }
 
 .stat-icon {
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .stat-content h4 {
@@ -929,20 +945,11 @@ section {
   color: #8892b0;
   font-size: 0.8rem;
   margin: 0;
+  line-height: 1.3;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .intro-gallery {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .accordion-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
   .quick-stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -954,9 +961,14 @@ section {
   }
 
   .accordion-header {
-    flex-direction: column;
-    text-align: center;
+    padding: 15px;
     gap: 15px;
+  }
+
+  .accordion-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 15px 20px;
   }
 
   .accordion-meta {
@@ -964,16 +976,137 @@ section {
     gap: 5px;
   }
 
-  .gallery-thumbnails {
+  .accordion-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quick-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 15px 10px;
+  }
+
+  .stat-content h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .accordion-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .accordion-indicator {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .accordion-arrow {
+    transform: rotate(0deg);
+  }
+
+  .accordion-item.active .accordion-arrow {
+    transform: rotate(90deg);
+  }
+
+  .accordion-main-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .company {
+    font-size: 0.9rem;
+  }
+
+  .accordion-meta {
+    font-size: 0.8rem;
+  }
+
+  .achievements h5,
+  .technologies-used h5 {
+    font-size: 1rem;
+  }
+
+  .achievements li {
+    font-size: 0.8rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
   }
 
   .quick-stats {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  .main-image {
-    height: 300px;
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-icon {
+    font-size: 1.3rem;
+  }
+
+  .stat-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .stat-content p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 0;
+  }
+
+  .accordion-container {
+    gap: 15px;
+  }
+
+  .accordion-header {
+    padding: 12px;
+  }
+
+  .accordion-grid {
+    padding: 0 12px 15px;
+    gap: 20px;
+  }
+
+  .accordion-number {
+    font-size: 1.3rem;
+  }
+
+  .accordion-main-info h4 {
+    font-size: 1rem;
+  }
+
+  .tech-tags {
+    gap: 6px;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Container padding for mobile */
+.container {
+  padding: 0 20px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
   }
 }
 

@@ -18,6 +18,7 @@ import MindtreeLogo2 from "../assets/mindtree2.png";
 import SCLogo from "../assets/startupsclub.jpg";
 import YaraLogo from "../assets/yara1.png";
 import StyledComponentLogo from "../assets/skills/styled-components.svg";
+import StackApps from '../assets/skills/stack-apps.svg';
 
 export {
     Gitlab,
@@ -39,5 +40,6 @@ export {
     MindtreeLogo2,
     SCLogo,
     YaraLogo,
-    StyledComponentLogo
+    StyledComponentLogo,
+    StackApps
 }
