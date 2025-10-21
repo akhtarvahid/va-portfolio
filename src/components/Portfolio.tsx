@@ -66,7 +66,7 @@ const ParticleBackground = () => {
             bubble: {
               distance: 400,
               duration: 2,
-              size: 25, // Increased bubble size on hover
+              size: 10, // Increased bubble size on hover
               opacity: 0.5, // Full opacity
               speed: 3,
             },
@@ -309,9 +309,9 @@ const AboutSection = () => {
       description:
         "Developing enterprise-level software solutions for agricultural technology.",
       achievements: [
-        "Led migration of legacy systems to microservices architecture",
-        "Improved application performance by 40% through optimization",
-        "Mentored 3 junior developers in best practices",
+        "Led the migration of a web application, improving performance and enhancing the user experience.",
+        "Built a farmer-facing web app that automated growth stage calendars, boosting crop yields by 20%.",
+        "Created reusable Storybook UI components, streamlining the development process and maintaining design consistency.",
       ],
       technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
       image: YaraLogo,
@@ -325,9 +325,9 @@ const AboutSection = () => {
       description:
         "Led frontend development for multiple client projects and implemented CI/CD pipelines.",
       achievements: [
-        "Reduced deployment time by 60% with automated pipelines",
-        "Architected scalable React applications for 50k+ users",
-        "Implemented design system used across 10+ projects",
+        "Built reusable UI components that are used across the project.",
+        "Architected scalable React typescript applications for 100k+ users.",
+        "Developed search module with autosuggestion and recent searches is being used across 45+ countries by 100k+ users.",
       ],
       technologies: ["React", "TypeScript", "Jenkins", "Redux", "MongoDB"],
       image: MindtreeLogo2,
@@ -341,21 +341,21 @@ const AboutSection = () => {
       description:
         "Built responsive user interfaces for startup products using React.js.",
       achievements: [
-        "Delivered 15+ production-ready applications",
-        "Improved page load times by 35% on average",
-        "Collaborated with cross-functional agile teams",
+        "Engineered React migration from jQuery, boosting performance 50% and productivity 65%.",
+        "Designed routing architecture for 50+ enterprise pages with conditional layouts and auth.",
+        "Developed social platform with real-time interactions and nested comments for 10K+ users.",
       ],
       technologies: ["React", "JavaScript", "CSS3", "REST APIs", "Git"],
       image: SCLogo,
     },
   ];
   const statsData = [
-    { id: 1, icon: "🚀", number: "50+", label: "Projects Completed" },
-    { id: 2, icon: "💼", number: "5+", label: "Years Experience" },
+    { id: 1, icon: "🚀", number: "10+", label: "Projects Completed" },
+    { id: 2, icon: "💼", number: "7+", label: "Years Experience" },
     { id: 3, icon: "⭐", number: "100%", label: "Client Satisfaction" },
     { id: 4, icon: "🔧", number: "15+", label: "Technologies" },
     { id: 5, icon: "🏆", number: "10+", label: "Awards & Certifications" },
-    { id: 6, icon: "🌍", number: "3+", label: "Countries Served" },
+    { id: 6, icon: "🌍", number: "5+", label: "Countries Served" },
   ];
   const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
