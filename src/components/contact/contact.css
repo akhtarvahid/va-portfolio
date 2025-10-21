@@ -1,0 +1,68 @@
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-description {
+  font-size: 1rem;
+  color: #8892b0;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 2.5rem;
+  background-color: transparent;
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 4rem;
+}
+
+.contact-button:hover {
+  background-color: rgba(204, 214, 246, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+}
+
+/* Copyright Footer */
+.copyright-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.copyright-footer p {
+  color: #8892b0;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .copyright-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
+
+  .copyright-footer p {
+    font-size: 0.8rem;
+  }
+}
