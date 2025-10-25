@@ -5,6 +5,7 @@ import ContactSection from "./contact/Contact";
 import HeroSection from "./hero/Hero-section";
 import Projects from "./projects/Projects";
 import Skills from "./skills/Skills";
+import Testimonials from "./testmonial/Testimonials";
 
 export default function Layout() {
   return (
@@ -14,6 +15,7 @@ export default function Layout() {
       <main className="main-content">
         <HeroSection />
         <AboutSection />
+        <Testimonials />
         <Projects />
         <Skills />
         <ContactSection />
