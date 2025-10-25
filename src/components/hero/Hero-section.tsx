@@ -32,20 +32,20 @@ const HeroSection = () => {
             I'm focused on building accessible, human-centered products.
           </p>
 
-          <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={handleContactClick}>
-              <FaEnvelope className="btn-icon" />
-              Get In Touch
-            </button>
-            <button className="btn btn-secondary" onClick={handleLinkedInClick}>
-              <FaLinkedin className="btn-icon" />
-              LinkedIn
-            </button>
-            <button className="btn btn-outline" onClick={handleResumeClick}>
-              <FaFileDownload className="btn-icon" />
-              Resume
-            </button>
-          </div>
+        <div className="hero-buttons">
+          <button className="btn btn-primary" onClick={handleContactClick} aria-label="Get In Touch">
+            <FaEnvelope className="btn-icon" />
+            <span className="btn-text">Get In Touch</span>
+          </button>
+          <button className="btn btn-secondary" onClick={handleLinkedInClick} aria-label="LinkedIn">
+            <FaLinkedin className="btn-icon" />
+            <span className="btn-text">LinkedIn</span>
+          </button>
+          <button className="btn btn-outline" onClick={handleResumeClick} aria-label="Resume">
+            <FaFileDownload className="btn-icon" />
+            <span className="btn-text">Resume</span>
+          </button>
+        </div>
         </div>
 
         <div className="hero-visual">
