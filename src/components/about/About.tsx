@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MindtreeLogo2, SCLogo, YaraLogo } from "../../assets";
-import './about.css';
+import "./about.css";
+import { FaBriefcase } from "react-icons/fa";
 
 const AboutSection = () => {
   const [activeExperience, setActiveExperience] = useState<null | string>("");
@@ -90,7 +91,9 @@ const AboutSection = () => {
                     onClick={() => toggleExperience(exp.id)}
                   >
                     <div className="accordion-indicator">
-                      <span className="accordion-number">{exp.id}</span>
+                      <span className="accordion-number">
+                        <FaBriefcase className="job-icon briefcase-icon" />
+                      </span>
                       <div className="accordion-arrow">›</div>
                     </div>
 

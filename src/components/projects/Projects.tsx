@@ -18,7 +18,7 @@ const Projects = () => {
       title: "Topics note App",
       description: "A collaborative topics management application",
       technologies: ["React", "github-page", "React-bootstrap", "SWR"],
-      github: "https://github.com/akhtarvahid/topics-note?tab=readme-ov-file",
+      github: "https://github.com/akhtarvahid/topics-note",
       demo: "https://akhtarvahid.github.io/topics-note/",
     },
     {
