@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { MindtreeLogo2, SCLogo, YaraLogo } from "../../assets";
+import NitDurgapur from "../../assets/education/NIT_Durgapur_Logo.svg";
+import Shiats from "../../assets/education/shiats.png";
+
 import "./about.css";
-import { FaBriefcase } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaChevronRight,
+  FaGraduationCap,
+  FaInfoCircle,
+  FaSchool,
+  FaUniversity,
+} from "react-icons/fa";
 
 const AboutSection = () => {
   const [activeExperience, setActiveExperience] = useState<null | string>("");
@@ -55,6 +65,40 @@ const AboutSection = () => {
       image: SCLogo,
     },
   ];
+  const [hoveredEducation, setHoveredEducation] = useState<null | string>(null);
+  const [activeEducation, setActiveEducation] = useState<null | string>(null);
+  const [hoveredCard, setHoveredCard] = useState<null | string>(null);
+
+  // Education data - add this new array
+  const educationData = [
+    {
+      id: "edu1",
+      degree: "Bachelor of Engineering in Computer Science",
+      college: "Visvesvaraya Technological University",
+      location: "Belagavi, Karnataka, India",
+      duration: "2014 - 2018",
+      description:
+        "Graduated with First Class Honors. Focused on software engineering principles, data structures, algorithms, and web technologies. Completed multiple projects including a web-based library management system and a machine learning-based sentiment analysis tool.",
+      gpa: "8.5/10 CGPA",
+      degreeIcon: <FaGraduationCap className="degree-icon" />,
+      // collegeLogo: VTULogo, // Uncomment when you add the logo
+      collegeIcon: <img src={NitDurgapur} className="college-icon" />,
+    },
+    {
+      id: "edu2",
+      degree: "Pre-University Course (PCMB)",
+      college: "Karnataka State Board",
+      location: "Bengaluru, Karnataka, India",
+      duration: "2012 - 2014",
+      description:
+        "Completed with distinction in Physics, Chemistry, Mathematics, and Biology. Developed strong analytical and problem-solving skills that formed the foundation for engineering studies.",
+      gpa: "85%",
+      degreeIcon: <FaUniversity className="degree-icon" />,
+      // collegeLogo: KarnatakaBoardLogo, // Uncomment when you add the logo
+      collegeIcon: <img src={Shiats} className="college-icon" />,
+    },
+  ];
+
   const statsData = [
     { id: 1, icon: "🚀", number: "10+", label: "Projects Completed" },
     { id: 2, icon: "💼", number: "7+", label: "Years Experience" },
@@ -66,7 +110,13 @@ const AboutSection = () => {
   const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
   };
+  const toggleEducation = (id: string) => {
+    setActiveEducation(activeEducation === id ? null : id);
+  };
 
+  const handleEducationHover = (id: string | null) => {
+    setHoveredEducation(id);
+  };
   return (
     <section id="about" className="about-section">
       <div className="container">
@@ -153,6 +203,71 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
+
+          {/* Education Section - Where It Began */}
+          <div className="education-section">
+            <h3 className="education-title">
+              <FaGraduationCap className="title-icon" />
+              Where It Began
+            </h3>
+
+            <div className="education-accordion">
+              <div className="accordion-container">
+                {educationData.map((edu) => (
+                  <div
+                    key={edu.id}
+                    className={`accordion-item ${
+                      activeEducation === edu.id ? "active" : ""
+                    }`}
+                  >
+                    <div
+                      className="accordion-header"
+                      onClick={() => toggleEducation(edu.id)}
+                    >
+                      <div className="accordion-indicator">
+                        <span className="accordion-number">
+                          {edu.degreeIcon}
+                        </span>
+                        <div className="accordion-arrow">
+                          <FaChevronRight />
+                        </div>
+                      </div>
+
+                      <div className="accordion-main-info">
+                        <h4>{edu.degree}</h4>
+                        <p className="company">{edu.college}</p>
+                        <div className="accordion-meta">
+                          <span className="duration">{edu.duration}</span>
+                          <span className="location">{edu.location}</span>
+                          {/* {edu.gpa && <span className="gpa">{edu.gpa}</span>} */}
+                        </div>
+                      </div>
+
+                      <div className="accordion-image">
+                        <div className="college-logo-icon">
+                          {edu.collegeIcon}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-content">
+                      <div className="accordion-grid">
+                        <div className="accordion-description">
+                          <div className="achievements">
+                            <h5>About This Program</h5>
+                            <p>{edu.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+
+
         </div>
       </div>
     </section>

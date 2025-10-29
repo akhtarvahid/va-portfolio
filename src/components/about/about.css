@@ -446,3 +446,297 @@
     padding: 0 15px;
   }
 }
+
+/* Education Section */
+
+/* Education Section */
+.education-section {
+  margin: 60px 0 0;
+}
+
+.education-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.title-icon {
+  color: #64ffda;
+  font-size: 1.3rem;
+}
+
+/* Education Accordion */
+.education-accordion {
+  margin-bottom: 40px;
+}
+
+.education-accordion .accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.education-accordion .accordion-item {
+  background: #010205;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.education-accordion .accordion-item.active {
+  border-color: #64ffda;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.education-accordion .accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.education-accordion .accordion-header:hover {
+  background: rgba(100, 255, 218, 0.05);
+}
+
+.education-accordion .accordion-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.education-accordion .accordion-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 10px;
+}
+
+.education-accordion .degree-icon {
+  color: #64ffda;
+  font-size: 1.3rem;
+}
+
+.education-accordion .accordion-arrow {
+  font-size: 1rem;
+  color: #64ffda;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-accordion .accordion-item.active .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+.education-accordion .accordion-main-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.education-accordion .accordion-main-info h4 {
+  font-size: 1.2rem;
+  color: #ccd6f6;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.education-accordion .company {
+  color: #64ffda;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.education-accordion .accordion-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #8892b0;
+  flex-wrap: wrap;
+}
+
+.education-accordion .accordion-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(100, 255, 218, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.education-accordion .college-logo-icon {
+  color: #64ffda;
+  font-size: 2rem;
+  line-height: 0;
+  background-color: white;
+}
+
+/* Accordion Content */
+.education-accordion .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.education-accordion .accordion-item.active .accordion-content {
+  max-height: var(--content-height, 500px);
+}
+
+.education-accordion .accordion-grid {
+  padding: 0 25px 25px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease 0.1s;
+}
+
+.education-accordion .accordion-item.active .accordion-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-accordion .achievements h5 {
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.education-accordion .achievements p {
+  color: #8892b0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .education-accordion .accordion-header {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .education-accordion .accordion-grid {
+    padding: 0 15px 20px;
+  }
+
+  .education-accordion .accordion-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .education-accordion .college-logo-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-accordion .accordion-header {
+    padding: 15px 12px;
+    gap: 12px;
+  }
+
+  .education-accordion .accordion-indicator {
+    /* Hide indicator on mobile */
+    /* display: none; */
+  }
+
+  .education-accordion .accordion-main-info {
+    flex: 0 1 auto; /* Allow main info to shrink */
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .education-accordion .accordion-main-info h4 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+
+  .education-accordion .company {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+  }
+
+  .education-accordion .accordion-meta {
+    display: none; /* Hide meta on mobile */
+  }
+
+  .education-accordion .accordion-image {
+    width: 40px;
+    height: 40px;
+    margin-left: auto; /* Push to right side */
+  }
+
+  .education-accordion .college-logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .education-accordion .accordion-arrow {
+    display: none; /* Hide arrow on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .education-section {
+    margin: 10px 0;
+  }
+
+  .education-accordion .accordion-container {
+    gap: 12px;
+  }
+
+  .education-accordion .accordion-header {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+
+  .education-accordion .accordion-grid {
+    padding: 0 12px 15px;
+  }
+
+  .education-accordion .accordion-main-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .education-accordion .company {
+    font-size: 0.8rem;
+  }
+
+  .education-accordion .accordion-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .education-accordion .college-logo-icon {
+    font-size: 1.1rem;
+  }
+
+  .education-accordion .achievements h5 {
+    font-size: 1rem;
+  }
+
+  .education-accordion .achievements p {
+    font-size: 0.9rem;
+  }
+}
