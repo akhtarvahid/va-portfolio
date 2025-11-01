@@ -119,10 +119,6 @@
 }
 
 .accordion-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  padding: 0 25px 25px;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.4s ease 0.1s;

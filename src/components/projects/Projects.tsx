@@ -1,35 +1,70 @@
 import { FaAws, FaGithub } from "react-icons/fa";
 import { StackApps } from "../../assets";
-import './project.css';
+import "./project.css";
+import { ALL_REPOS } from "../../common/constant";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Medium-ms",
+      title: "Medium-MS",
       description:
-        "A full-stack blogging app with React, Nest.js, and PostgreSQL",
-      technologies: ["React", "Nestjs.js", "PostgreSQL", "TypeORM"],
+        "A full-stack blogging platform with real-time features, user authentication, and rich text editing capabilities. Built with modern web technologies for seamless content creation and sharing.",
+      technologies: [
+        "React",
+        "Nest.js",
+        "PostgreSQL",
+        "TypeORM",
+        "JWT",
+        "Redis",
+      ],
       github: "https://github.com/akhtarvahid/medium-ms",
-      demo: "https://demo.com",
+      demo: "https://github.com/akhtarvahid/medium-ms",
+      featured: true,
     },
     {
       id: 2,
-      title: "Topics note App",
-      description: "A collaborative topics management application",
-      technologies: ["React", "github-page", "React-bootstrap", "SWR"],
+      title: "Topics Note App",
+      description:
+        "A collaborative topic management application with real-time updates, categorization, and search functionality. Enables teams to organize and share knowledge efficiently.",
+      technologies: [
+        "React",
+        "GitHub Pages",
+        "React Bootstrap",
+        "SWR",
+        "Context API",
+      ],
       github: "https://github.com/akhtarvahid/topics-note",
       demo: "https://akhtarvahid.github.io/topics-note/",
+      featured: true,
     },
     {
       id: 3,
-      title: "Weather Dashboard",
+      title: "E-Commerce API",
       description:
-        "Real-time weather forecasting application with interactive maps",
-      technologies: ["React", "OpenWeather API", "Chart.js", "CSS3"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+        "A robust backend e-commerce solution with product management, user authentication, order processing, and payment integration. Built with scalable architecture in mind.",
+      technologies: [
+        "Nest.js",
+        "Node.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Stripe API",
+      ],
+      github: "https://github.com/akhtarvahid/ecommerce",
+      demo: "https://github.com/akhtarvahid/ecommerce",
+      featured: false,
     },
+    {
+      id: 4,
+      title: "Portfolio Website",
+      description:
+        "A responsive and modern portfolio website showcasing projects and skills with smooth animations and optimized performance across all devices.",
+      technologies: ["React", "TypeScript", "CSS3", "Framer Motion", "Vite"],
+      github: "https://github.com/akhtarvahid/portfolio",
+      demo: "https://your-portfolio-link.com", // Add your actual portfolio link
+      featured: true,
+    }
   ];
 
   return (
@@ -39,51 +74,59 @@ const Projects = () => {
           <span className="section-number">02.</span>
           Projects
         </h2>
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="technologies">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="proj-tech-tags">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  <a
-                    href={project.github}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                    Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaAws />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img style={{ height: 20 }} src={StackApps} alt="stack" />
-                    View More
-                  </a>
+        <div
+          className={`projects-container ${
+            projects.length > 3 ? "scrollable" : ""
+          }`}
+        >
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <div key={project.id} className="project-card">
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3 className="project-title">{project.title}</h3>
+                  </div>
+                  <p className="project-description">{project.description}</p>
+                  <div className="technologies">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="proj-tech-tags">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="project-links">
+                    <a
+                      href={project.github}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub />
+                      <span className="link-text">Code</span>
+                    </a>
+                    <a
+                      href={project.demo}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaAws />
+                      <span className="link-text">Live Demo</span>
+                    </a>
+                    <a
+                      href={ALL_REPOS}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img style={{ height: 20 }} src={StackApps} alt="stack" />
+                      <span className="link-text">View More</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

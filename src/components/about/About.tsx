@@ -73,29 +73,29 @@ const AboutSection = () => {
   const educationData = [
     {
       id: "edu1",
-      degree: "Bachelor of Engineering in Computer Science",
-      college: "Visvesvaraya Technological University",
-      location: "Belagavi, Karnataka, India",
-      duration: "2014 - 2018",
+      degree: "Master of Computer Application",
+      college: "NIT Durgapur",
+      location: "Durgapur, West Bengal, India",
+      duration: "2013 - 2016",
       description:
-        "Graduated with First Class Honors. Focused on software engineering principles, data structures, algorithms, and web technologies. Completed multiple projects including a web-based library management system and a machine learning-based sentiment analysis tool.",
+        "Completed Master's in Computer Application from National Institute of Technology Durgapur, one of India's premier technical institutions. The program provided advanced knowledge in software engineering, database management, algorithms, and web technologies. Gained hands-on experience through various projects including distributed systems, machine learning applications, and enterprise software development. The curriculum emphasized both theoretical foundations and practical implementation, preparing for real-world software development challenges.",
       gpa: "8.5/10 CGPA",
       degreeIcon: <FaGraduationCap className="degree-icon" />,
-      // collegeLogo: VTULogo, // Uncomment when you add the logo
-      collegeIcon: <img src={NitDurgapur} className="college-icon" />,
+      collegeIcon: (
+        <img src={NitDurgapur} alt="NIT Durgapur" className="college-icon" />
+      ),
     },
     {
       id: "edu2",
-      degree: "Pre-University Course (PCMB)",
-      college: "Karnataka State Board",
-      location: "Bengaluru, Karnataka, India",
-      duration: "2012 - 2014",
+      degree: "Bachelor in Computer Application",
+      college: "SHIATS",
+      location: "Allahabad, Uttar Pradesh, India",
+      duration: "2010 - 2013",
       description:
-        "Completed with distinction in Physics, Chemistry, Mathematics, and Biology. Developed strong analytical and problem-solving skills that formed the foundation for engineering studies.",
+        "Earned Bachelor's degree in Computer Application from Sam Higginbottom University of Agriculture, Technology and Sciences. The program built strong fundamentals in programming, data structures, computer networks, and software development methodologies. Developed foundational skills in various programming languages and database management systems. Participated in academic projects that involved building desktop applications and web-based systems, laying the groundwork for advanced studies and professional career in software development.",
       gpa: "85%",
       degreeIcon: <FaUniversity className="degree-icon" />,
-      // collegeLogo: KarnatakaBoardLogo, // Uncomment when you add the logo
-      collegeIcon: <img src={Shiats} className="college-icon" />,
+      collegeIcon: <img src={Shiats} alt="SHIATS" className="college-icon" />,
     },
   ];
 
@@ -265,9 +265,6 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-          
-
-
         </div>
       </div>
     </section>

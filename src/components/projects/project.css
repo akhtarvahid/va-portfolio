@@ -1,12 +1,59 @@
-
-
 /* Projects Section */
+.projects-section {
+  padding: 80px 0;
+}
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
   width: 100%;
+}
+
+/* Horizontal scroll when more than 3 projects */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Enable horizontal scroll when there are more than 3 projects */
+  .projects-grid:has(.project-card:nth-child(4)) {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 10px 5px 25px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+  
+  .projects-grid:has(.project-card:nth-child(4)) .project-card {
+    flex: 0 0 auto;
+    min-width: 350px;
+    max-width: 400px;
+    scroll-snap-align: start;
+  }
+}
+
+/* Custom scrollbar for horizontal scrolling */
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: rgba(100, 255, 218, 0.3);
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 255, 218, 0.5);
 }
 
 .project-card {
@@ -113,7 +160,95 @@
   width: 100%;
 }
 
+/* Tablet and smaller desktop */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Enable horizontal scroll when there are more than 2 projects on tablet */
+  .projects-grid:has(.project-card:nth-child(3)) {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 10px 5px 25px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+  
+  .projects-grid:has(.project-card:nth-child(3)) .project-card {
+    flex: 0 0 auto;
+    min-width: 320px;
+    max-width: 380px;
+    scroll-snap-align: start;
+  }
+}
 
+/* Mobile devices */
+@media (max-width: 767px) {
+  .projects-section {
+    padding: 60px 0;
+  }
+  
+  .projects-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 10px 5px 25px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .project-card {
+    flex: 0 0 auto;
+    min-width: 280px;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+  }
+  
+  .project-links {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .project-link {
+    font-size: 0.85rem;
+  }
+}
 
-
-
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .projects-grid {
+    gap: 1rem;
+    padding: 8px 5px 20px;
+  }
+  
+  .project-card {
+    min-width: 260px;
+    max-width: 300px;
+    padding: 1.2rem;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+  
+  .proj-tech-tags {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
