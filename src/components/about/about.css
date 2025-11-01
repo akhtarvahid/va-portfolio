@@ -232,6 +232,8 @@
 }
 
 /* Quick Stats */
+
+/* Quick Stats */
 .quick-stats {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -245,6 +247,7 @@
   padding: 20px 15px;
   text-align: center;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .stat-card:hover {
@@ -275,7 +278,7 @@
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
   .quick-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -287,7 +290,6 @@
   .accordion-header {
     padding: 15px;
     gap: 15px;
-    /* Keep display: flex for mobile */
     display: flex;
     align-items: center;
   }
@@ -308,13 +310,40 @@
     height: 50px;
   }
 
+  /* Quick Stats horizontal scroll for tablet */
   .quick-stats {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    grid-template-columns: none;
     gap: 12px;
+    overflow-x: auto;
+    padding: 10px 5px 20px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .quick-stats::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .quick-stats::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+  }
+
+  .quick-stats::-webkit-scrollbar-thumb {
+    background: rgba(100, 255, 218, 0.3);
+    border-radius: 3px;
+  }
+
+  .quick-stats::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 255, 218, 0.5);
   }
 
   .stat-card {
-    padding: 15px 10px;
+    padding: 15px 20px;
+    min-width: 140px;
+    flex: 0 0 auto;
   }
 
   .stat-content h4 {
@@ -352,7 +381,6 @@
     font-size: 0.9rem;
   }
 
-  /* HIDE accordion-meta on mobile */
   .accordion-meta {
     display: none;
   }
@@ -371,13 +399,17 @@
     padding: 4px 10px;
   }
 
+  /* Quick Stats horizontal scroll for mobile */
   .quick-stats {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 10px;
+    padding: 10px 5px 20px;
+    margin: 0 -5px;
   }
 
   .stat-card {
     padding: 15px;
+    min-width: 130px;
   }
 
   .stat-icon {
@@ -431,9 +463,56 @@
     padding: 3px 8px;
   }
 
-  /* Ensure accordion-meta is hidden on very small screens too */
   .accordion-meta {
     display: none;
+  }
+
+  /* Enhanced horizontal scroll for small mobile */
+  .quick-stats {
+    gap: 8px;
+    padding: 8px 5px 15px;
+  }
+
+  .stat-card {
+    padding: 12px 15px;
+    min-width: 120px;
+  }
+
+  .stat-icon {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .stat-content h4 {
+    font-size: 1rem;
+  }
+
+  .stat-content p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .quick-stats {
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+
+  .stat-icon {
+    font-size: 1.1rem;
+  }
+
+  .stat-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .stat-content p {
+    font-size: 0.65rem;
   }
 }
 
