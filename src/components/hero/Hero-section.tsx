@@ -1,5 +1,7 @@
 import { FaEnvelope, FaFileDownload, FaLinkedin } from "react-icons/fa";
 import "./hero.css";
+import PersonalPic from "../../assets/personal.png";
+
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
 
@@ -24,33 +26,50 @@ const HeroSection = () => {
           <p className="hero-greeting">
             Hello <span className="waving-hand">👋</span>, my name is
           </p>
-          <h1 className="hero-title">John Doe</h1>
+          <h1 className="hero-title">Vahid Akhtar</h1>
           <h2 className="hero-subtitle">I build things for the web.</h2>
           <p className="hero-description">
-            I'm a full-stack developer specializing in building (and
-            occasionally designing) exceptional digital experiences. Currently,
-            I'm focused on building accessible, human-centered products.
+            Passionate Frontend Developer focused on crafting fast, scalable,
+            and intuitive web applications. I turn ideas into elegant,
+            high-performing digital experiences with a strong eye for design and
+            performance. Let’s collaborate to build outstanding web experiences.
           </p>
 
-        <div className="hero-buttons">
-          <button className="btn btn-primary" onClick={handleContactClick} aria-label="Get In Touch">
-            <FaEnvelope className="btn-icon" />
-            <span className="btn-text">Get In Touch</span>
-          </button>
-          <button className="btn btn-secondary" onClick={handleLinkedInClick} aria-label="LinkedIn">
-            <FaLinkedin className="btn-icon" />
-            <span className="btn-text">LinkedIn</span>
-          </button>
-          <button className="btn btn-outline" onClick={handleResumeClick} aria-label="Resume">
-            <FaFileDownload className="btn-icon" />
-            <span className="btn-text">Resume</span>
-          </button>
-        </div>
+          <div className="hero-buttons">
+            <button
+              className="btn btn-primary"
+              onClick={handleContactClick}
+              aria-label="Get In Touch"
+            >
+              <FaEnvelope className="btn-icon" />
+              <span className="btn-text">Get In Touch</span>
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={handleLinkedInClick}
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="btn-icon" />
+              <span className="btn-text">LinkedIn</span>
+            </button>
+            <button
+              className="btn btn-outline"
+              onClick={handleResumeClick}
+              aria-label="Resume"
+            >
+              <FaFileDownload className="btn-icon" />
+              <span className="btn-text">Resume</span>
+            </button>
+          </div>
         </div>
 
         <div className="hero-visual">
           <div className="profile-image-container">
-            <img src={profileImage} alt="John Doe" className="profile-image" />
+            <img
+              src={PersonalPic || profileImage}
+              alt="John Doe"
+              className="profile-image"
+            />
             <div className="image-border"></div>
           </div>
         </div>

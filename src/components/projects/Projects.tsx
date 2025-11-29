@@ -52,7 +52,7 @@ const Projects = () => {
         "Stripe API",
       ],
       github: "https://github.com/akhtarvahid/ecommerce",
-      demo: "https://github.com/akhtarvahid/ecommerce",
+      demo: "http://ec2-16-171-32-7.eu-north-1.compute.amazonaws.com/api",
       featured: false,
     },
     {
