@@ -21,7 +21,7 @@ const ContactSection = () => {
             projects. Whether you have a question, want to collaborate, or just
             want to say hello, I'll do my best to get back to you!
           </p>
-          <a href="mailto:john.doe@example.com" className="contact-button">
+          <a href="mailto:vahidakhtar2@gmail.com" className="contact-button">
             <FaEnvelope className="btn-icon" />
             Say Hello
           </a>
@@ -29,32 +29,32 @@ const ContactSection = () => {
             <a
               href="https://www.github.com/akhtarvahid/"
               target="_blank"
-              className="social-link"
+              className="social-link github-link"
             >
-              <FaGithub />
+              <FaGithub className="btn-icon" />
             </a>
             <a
               href="https://www.linkedin.com/in/akhtarvahid/"
               target="_blank"
-              className="social-link"
+              className="social-link linkedin-link"
             >
-              <FaLinkedin />
+              <FaLinkedin className="btn-icon" />
             </a>
             <a
               href="https://x.com/vahidakhtar4"
               target="_blank"
-              className="social-link"
+              className="social-link twitter-link"
             >
-              <FaTwitter />
+              <FaTwitter className="btn-icon" />
             </a>
             <a
               href="https://stackoverflow.com"
-              className="social-link"
+              className="social-link stackoverflow-link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Stack Overflow"
             >
-              <FaStackOverflow />
+              <FaStackOverflow className="btn-icon" />
             </a>
           </div>
         </div>

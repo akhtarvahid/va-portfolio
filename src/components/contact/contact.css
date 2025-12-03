@@ -39,7 +39,26 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
 }
-
+.contact-button:hover .btn-icon {
+  animation: envelopeMagic 0.6s ease-in-out;
+  color: #64ffda;
+}
+.github-link:hover .btn-icon {
+  animation: envelopeMagic 0.6s ease-in-out;
+  color: #64ffda;
+}
+.linkedin-link:hover .btn-icon {
+  animation: envelopeMagic 0.6s ease-in-out;
+  color: #64ffda;
+}
+.stackoverflow-link:hover .btn-icon {
+  animation: envelopeMagic 0.6s ease-in-out;
+  color: #64ffda;
+}
+.twitter-link:hover .btn-icon {
+  animation: envelopeMagic 0.6s ease-in-out;
+  color: #64ffda;
+}
 /* Copyright Footer */
 .copyright-footer {
   text-align: center;
@@ -64,5 +83,49 @@
 
   .copyright-footer p {
     font-size: 0.8rem;
+  }
+}
+
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: #ccd6f6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccd6f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.social-link:hover {
+  color: #64ffda;
+  border-color: #64ffda;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+
+@keyframes envelopeMagic {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  33% {
+    transform: translateY(-4px) scale(1.1);
+  }
+  66% {
+    transform: translateY(2px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1.05);
   }
 }

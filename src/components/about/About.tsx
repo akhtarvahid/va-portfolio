@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { MindtreeLogo2, SCLogo, YaraLogo } from "../../assets";
-import './about.css';
+import NitDurgapur from "../../assets/education/NIT_Durgapur_Logo.svg";
+import Shiats from "../../assets/education/shiats.png";
+
+import "./about.css";
+import {
+  FaBriefcase,
+  FaChevronRight,
+  FaGraduationCap,
+  FaUniversity,
+} from "react-icons/fa";
 
 const AboutSection = () => {
   const [activeExperience, setActiveExperience] = useState<null | string>("");
@@ -54,6 +63,38 @@ const AboutSection = () => {
       image: SCLogo,
     },
   ];
+  const [activeEducation, setActiveEducation] = useState<null | string>(null);
+
+  // Education data - add this new array
+  const educationData = [
+    {
+      id: "edu1",
+      degree: "Master of Computer Application",
+      college: "NIT Durgapur",
+      location: "Durgapur, West Bengal, India",
+      duration: "2013 - 2016",
+      description:
+        "Completed Master's in Computer Application from National Institute of Technology Durgapur, one of India's premier technical institutions. The program provided advanced knowledge in software engineering, database management, algorithms, and web technologies. Gained hands-on experience through various projects including distributed systems, machine learning applications, and enterprise software development. The curriculum emphasized both theoretical foundations and practical implementation, preparing for real-world software development challenges.",
+      gpa: "8.5/10 CGPA",
+      degreeIcon: <FaGraduationCap className="degree-icon" />,
+      collegeIcon: (
+        <img src={NitDurgapur} alt="NIT Durgapur" className="college-icon" />
+      ),
+    },
+    {
+      id: "edu2",
+      degree: "Bachelor in Computer Application",
+      college: "SHIATS",
+      location: "Allahabad, Uttar Pradesh, India",
+      duration: "2010 - 2013",
+      description:
+        "Earned Bachelor's degree in Computer Application from Sam Higginbottom University of Agriculture, Technology and Sciences. The program built strong fundamentals in programming, data structures, computer networks, and software development methodologies. Developed foundational skills in various programming languages and database management systems. Participated in academic projects that involved building desktop applications and web-based systems, laying the groundwork for advanced studies and professional career in software development.",
+      gpa: "85%",
+      degreeIcon: <FaUniversity className="degree-icon" />,
+      collegeIcon: <img src={Shiats} alt="SHIATS" className="college-icon" />,
+    },
+  ];
+
   const statsData = [
     { id: 1, icon: "🚀", number: "10+", label: "Projects Completed" },
     { id: 2, icon: "💼", number: "7+", label: "Years Experience" },
@@ -64,6 +105,9 @@ const AboutSection = () => {
   ];
   const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
+  };
+  const toggleEducation = (id: string) => {
+    setActiveEducation(activeEducation === id ? null : id);
   };
 
   return (
@@ -90,7 +134,9 @@ const AboutSection = () => {
                     onClick={() => toggleExperience(exp.id)}
                   >
                     <div className="accordion-indicator">
-                      <span className="accordion-number">{exp.id}</span>
+                      <span className="accordion-number">
+                        <FaBriefcase className="job-icon briefcase-icon" />
+                      </span>
                       <div className="accordion-arrow">›</div>
                     </div>
 
@@ -149,6 +195,68 @@ const AboutSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Education Section - Where It Began */}
+          <div className="education-section">
+            <h3 className="education-title">
+              <FaGraduationCap className="title-icon" />
+              Where It Began
+            </h3>
+
+            <div className="education-accordion">
+              <div className="accordion-container">
+                {educationData.map((edu) => (
+                  <div
+                    key={edu.id}
+                    className={`accordion-item ${
+                      activeEducation === edu.id ? "active" : ""
+                    }`}
+                  >
+                    <div
+                      className="accordion-header"
+                      onClick={() => toggleEducation(edu.id)}
+                    >
+                      <div className="accordion-indicator">
+                        <span className="accordion-number">
+                          {edu.degreeIcon}
+                        </span>
+                        <div className="accordion-arrow">
+                          <FaChevronRight />
+                        </div>
+                      </div>
+
+                      <div className="accordion-main-info">
+                        <h4>{edu.degree}</h4>
+                        <p className="company">{edu.college}</p>
+                        <div className="accordion-meta">
+                          <span className="duration">{edu.duration}</span>
+                          <span className="location">{edu.location}</span>
+                          {/* {edu.gpa && <span className="gpa">{edu.gpa}</span>} */}
+                        </div>
+                      </div>
+
+                      <div className="accordion-image">
+                        <div className="college-logo-icon">
+                          {edu.collegeIcon}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-content">
+                      <div className="accordion-grid">
+                        <div className="accordion-description">
+                          <div className="achievements">
+                            <h5>About This Program</h5>
+                            <p>{edu.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
