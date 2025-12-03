@@ -8,8 +8,6 @@ import {
   FaBriefcase,
   FaChevronRight,
   FaGraduationCap,
-  FaInfoCircle,
-  FaSchool,
   FaUniversity,
 } from "react-icons/fa";
 
@@ -65,9 +63,7 @@ const AboutSection = () => {
       image: SCLogo,
     },
   ];
-  const [hoveredEducation, setHoveredEducation] = useState<null | string>(null);
   const [activeEducation, setActiveEducation] = useState<null | string>(null);
-  const [hoveredCard, setHoveredCard] = useState<null | string>(null);
 
   // Education data - add this new array
   const educationData = [
@@ -114,9 +110,6 @@ const AboutSection = () => {
     setActiveEducation(activeEducation === id ? null : id);
   };
 
-  const handleEducationHover = (id: string | null) => {
-    setHoveredEducation(id);
-  };
   return (
     <section id="about" className="about-section">
       <div className="container">
