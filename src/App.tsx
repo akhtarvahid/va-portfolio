@@ -1,15 +1,8 @@
-import './App.css'
-import Layout from './components/Layout';
-// import Portfolio from './components/Portfolio';
+import "./App.css";
+import Layout from "./components/Layout";
 
 function App() {
-
-  return (
-    <>
-    {/* <Portfolio /> */}
-    <Layout />
-    </>
-  )
+  return <Layout />;
 }
 
 export default App;

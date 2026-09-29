@@ -6,6 +6,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import "./contact.css";
+import { contactContent, copyRightsText } from "../../common/data";
 
 const ContactSection = () => {
   return (
@@ -16,11 +17,7 @@ const ContactSection = () => {
           Contact
         </h2>
         <div className="contact-content">
-          <p className="contact-description">
-            I'm currently looking for new opportunities and interesting
-            projects. Whether you have a question, want to collaborate, or just
-            want to say hello, I'll do my best to get back to you!
-          </p>
+          <p className="contact-description">{contactContent}</p>
           <a href="mailto:vahidakhtar2@gmail.com" className="contact-button">
             <FaEnvelope className="btn-icon" />
             Say Hello
@@ -61,7 +58,7 @@ const ContactSection = () => {
         {/* Copyright Footer */}
         <div className="copyright-footer">
           <div className="container">
-            <p>&copy; 2025 Vahid Akhtar. All rights reserved.</p>
+            <p>&copy;{copyRightsText}</p>
           </div>
         </div>
       </div>
