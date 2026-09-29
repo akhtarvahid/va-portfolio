@@ -1,6 +1,7 @@
 import { FaEnvelope, FaFileDownload, FaLinkedin } from "react-icons/fa";
 import "./hero.css";
 import PersonalPic from "../../assets/personal.png";
+import { heroDescription } from "../../common/data";
 
 const profileImage =
   "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300";
@@ -28,12 +29,7 @@ const HeroSection = () => {
           </p>
           <h1 className="hero-title">Vahid Akhtar</h1>
           <h2 className="hero-subtitle">I build things for the web.</h2>
-          <p className="hero-description">
-            Passionate Frontend Developer focused on crafting fast, scalable,
-            and intuitive web applications. I turn ideas into elegant,
-            high-performing digital experiences with a strong eye for design and
-            performance. Let’s collaborate to build outstanding web experiences.
-          </p>
+          <p className="hero-description">{heroDescription}</p>
 
           <div className="hero-buttons">
             <button
