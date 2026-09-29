@@ -44,7 +44,6 @@ const AboutSection = () => {
       collegeIcon: <img src={Shiats} alt="SHIATS" className="college-icon" />,
     },
   ];
-
   const toggleExperience = (id: string) => {
     setActiveExperience(activeExperience === id ? null : id);
   };
